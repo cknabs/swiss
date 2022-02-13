@@ -1,0 +1,17 @@
+name = "Swiss"
+license = "MIT"
+licenselink = "https://github.com/cknabs/swiss/blob/master/LICENSE"
+description = ""
+homepage = "https://github.com/cknabs/swiss"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+  name = "Christian Knabenhans"
+  homepage = "https://github.com/cknabs"
+
+[original]
+  name = "Swiss"
+  homepage = "https://github.com/broccolini/swiss"
+  repo = "https://github.com/broccolini/swiss"
