@@ -1,5 +1,67 @@
----
-layout: home
----
+<!DOCTYPE html>
+<html>
 
-<!-- Set title and description in config.yml -->
+  {{ partial "head.html" . }}
+
+  <body>
+
+    <div>
+
+      <header class="header-background">
+
+        <div class="clearfix border-bottom-thick header-border">
+          <ul class="list-reset right py-1 header-text font-smoothing">
+		  {{ range .Site.Menus.Main -}}
+              <li class="inline-block">
+                <a class="align-middle link-primary header-link mr-2" href="{{ .URL }}">{{ .Title }}</a>
+              </li>
+	      {{- end }}
+          </ul>
+        </div>
+
+        <div class="container mx-auto px-2 mb-2 clearfix header-text">
+          <h1 class="h0 inline-block col-9 sm-width-full py-4 mt-3 header-title">{{ .Site.Title }}</h1>
+
+          <div class="clearfix mb-4 py-1">
+            <div class="col-4 sm-width-full left border-top-thin">
+              <div class="table">
+                <div class="inline-block mt-3 mr-1">
+                  {{ partial "dot-accent.html" . }}
+                </div>
+                <div class="inline-block mt-3 mr-1">
+                  {{ partial "dot-accent.html" . }}
+                </div>
+                <div class="inline-block mt-3">
+                  {{ partial "github.html" . }}
+                </div>
+              </div>
+              <!-- Set site description in config.yml -->
+              <p class="h4 lh-condensed font-smoothing mt-2 py-1">{{ .Params.description }}</p>
+            </div>
+
+            <div class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 table">
+                <div class="inline-block mt-3 mr-1">
+                  {{ partial "dot.html" . }}
+                </div>
+                <div class="inline-block mt-3">
+                  {{ partial "social_link.html" . }}
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      <div class="container mx-auto px-2 py-4">
+        {{ range .Pages -}}
+          {{ partial "post_block.html" . }}
+        {{- end }}
+      </div>
+
+    </div>
+
+    {{ partial "footer.html" . }}
+
+  </body>
+
+</html>
